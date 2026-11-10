@@ -7,7 +7,9 @@
 
   // Carpeta con los archivos del sitio.
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    // Rutas inexistentes responden con 404.html y estado 404.
+    "not_found_handling": "404-page"
   },
 
   // Dominio personalizado: Cloudflare crea el registro DNS y el certificado.
