@@ -23,10 +23,15 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Growpipe — Prospección B2B con IA para pymes de LATAM</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="preload" href="/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/space-grotesk-latin-500-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/space-grotesk-latin-600-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/space-grotesk-latin-700-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/inter-latin-500-normal.woff2') format('woff2'); }
+    @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); }
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #0b110e; font-family: 'Inter', system-ui, sans-serif; color: #e8efe9; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
@@ -65,7 +70,7 @@
       a.btn-solid:hover, a.btn-line:hover { transform: none; }
     }
   </style>
-  <script src="/main.js"></script>
+  <script defer src="/main.js"></script>
 </head>
 <body>
 <div style="width:100%;box-sizing:border-box;background:#0b110e">
