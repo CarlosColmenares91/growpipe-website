@@ -1,0 +1,4 @@
+Contact: mailto:hola@growpipe.co
+Expires: 2027-11-10T12:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://growpipe.co/.well-known/security.txt
