@@ -18,650 +18,222 @@
   <meta name="twitter:title" content="Growpipe — Prospección Outbound para LATAM">
   <meta name="twitter:description" content="Conseguimos reuniones con tus clientes ideales usando email outbound y cold calling.">
   <meta name="twitter:image" content="https://growpipe.co/og-image.png">
-  <meta name="theme-color" content="#16a34a">
+  <meta name="theme-color" content="#0b110e">
   <link rel="canonical" href="https://growpipe.co/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <title>Growpipe — Tu equipo de ventas externo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green: #16a34a;
-      --green-dark: #15803d;
-      --green-light: #f0fdf4;
-      --green-mid: #dcfce7;
-      --text: #111827;
-      --text-secondary: #6b7280;
-      --border: #e5e7eb;
-      --border-hover: #d1d5db;
-      --bg: #ffffff;
-      --bg-secondary: #f9fafb;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-    }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+    body { margin: 0; background: #0b110e; font-family: 'Inter', system-ui, sans-serif; color: #e8efe9; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    a.link:hover { color: #4ade80; }
+    a.btn-solid:hover { background: #86efac; }
+    a.btn-line:hover { border-color: #4ade80; color: #4ade80; }
+    a:focus-visible { outline: 2px solid #4ade80; outline-offset: 3px; border-radius: 4px; }
+    ::selection { background: #4ade80; color: #06220f; }
+    @media (max-width: 760px) {
+      .stat { padding: 24px 0 !important; border-left: none !important; border-top: 1px solid #22302a; }
+      .stat:first-child { border-top: none; }
     }
-
-    /* ── LAYOUT ── */
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(8px);
-      z-index: 100;
-    }
-
-    .nav-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .logo span { color: var(--green); }
-
-    .nav-cta {
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .nav-cta:hover { background: var(--bg-secondary); border-color: var(--border-hover); }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 80px 0 64px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 20px;
-    }
-
-    .headline {
-      font-family: 'DM Serif Display', serif;
-      font-size: 52px;
-      line-height: 1.08;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      margin-bottom: 20px;
-    }
-
-    .headline em {
-      font-style: italic;
-      color: var(--green);
-    }
-
-    .subheadline {
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 540px;
-      margin-bottom: 32px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      font-size: 14px;
-      font-weight: 500;
-      padding: 12px 24px;
-      background: var(--green);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s;
-    }
-
-    .btn-primary:hover { background: var(--green-dark); }
-
-    .btn-ghost {
-      font-size: 14px;
-      font-weight: 400;
-      padding: 12px 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: transparent;
-      color: var(--text-secondary);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s, border-color 0.15s;
-    }
-
-    .btn-ghost:hover { background: var(--bg-secondary); border-color: var(--border-hover); }
-
-    /* ── STATS ── */
-    .stats {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .stat {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-md);
-      padding: 20px;
-    }
-
-    .stat-num {
-      font-size: 30px;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stat-num span { color: var(--green); }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 64px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-    }
-
-    /* ── SERVICES ── */
-    .services-list {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .service-item {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 24px;
-      border-bottom: 1px solid var(--border);
-      transition: background 0.15s;
-    }
-
-    .service-item:last-child { border-bottom: none; }
-    .service-item:hover { background: var(--bg-secondary); }
-
-    .service-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--green-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .service-icon svg {
-      width: 20px;
-      height: 20px;
-      stroke: var(--green);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .service-title {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
-
-    .service-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .steps { display: flex; flex-direction: column; }
-
-    .step {
-      display: flex;
-      gap: 20px;
-      position: relative;
-    }
-
-    .step-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 36px;
-      flex-shrink: 0;
-    }
-
-    .step-dot {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--green);
-      flex-shrink: 0;
-      z-index: 1;
-    }
-
-    .step-line {
-      width: 1px;
-      flex: 1;
-      background: var(--border);
-      margin: 4px 0;
-      min-height: 28px;
-    }
-
-    .step:last-child .step-line { display: none; }
-
-    .step-body { padding-bottom: 28px; padding-top: 5px; }
-    .step-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
-    .step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-
-    /* ── PRICING ── */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .plan {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-      transition: border-color 0.15s;
-    }
-
-    .plan:hover { border-color: var(--border-hover); }
-
-    .plan.featured { border: 2px solid var(--green); }
-
-    .plan-badge {
-      font-size: 11px;
-      font-weight: 500;
-      background: var(--green-light);
-      color: var(--green-dark);
-      padding: 3px 10px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    .plan-name {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 6px;
-      color: var(--text-secondary);
-    }
-
-    .plan-price {
-      font-size: 32px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1;
-    }
-
-    .plan-price span {
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--text-secondary);
-    }
-
-    .plan-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      margin: 10px 0 16px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .plan-feature {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding: 5px 0;
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .plan-feature svg {
-      width: 15px;
-      height: 15px;
-      stroke: var(--green);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    /* ── CTA BLOCK ── */
-    .cta-block {
-      background: var(--bg-secondary);
-      border-radius: var(--radius-lg);
-      padding: 48px 40px;
-      text-align: center;
-    }
-
-    .cta-title {
-      font-family: 'DM Serif Display', serif;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .cta-sub {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 28px 0;
-    }
-
-    .footer-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-logo {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .footer-logo span { color: var(--green); }
-
-    .footer-email {
-      font-size: 13px;
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-
-    .footer-email:hover { color: var(--green); }
-
-    .pricing-note {
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-
-    .cta-alt {
-      margin-top: 16px;
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .headline { font-size: 36px; }
-      .stats-grid { grid-template-columns: 1fr; gap: 10px; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .cta-block { padding: 36px 24px; }
-      .hero { padding: 56px 0 48px; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
+<div style="width:100%;box-sizing:border-box;background:#0b110e">
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="logo">Grow<span>pipe</span></a>
-      <a href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" class="nav-cta">Escribinos</a>
-    </div>
-  </nav>
+<div style="max-width:1120px;margin:0 auto;padding:0 32px;box-sizing:border-box">
 
-  <!-- HERO -->
-  <div class="container">
-    <div class="hero">
-      <p class="eyebrow">Prospección Outbound para LATAM</p>
-      <h1 class="headline">Tu equipo de ventas<br><em>externo.</em></h1>
-      <p class="subheadline">Conseguimos reuniones con tus clientes ideales usando email outbound y cold calling. Sin contratar un SDR full-time.</p>
-      <div class="hero-ctas">
-        <a href="#como-funciona" class="btn-primary">Ver cómo funciona</a>
-        <a href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" class="btn-ghost">Pedí una llamada gratis →</a>
-      </div>
-    </div>
-  </div>
+<nav style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px 0">
+<a href="#inicio" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px">
+<span aria-hidden="true" style="display:flex;align-items:flex-end;gap:3px;width:32px;height:32px;box-sizing:border-box;padding:7px;background:#4ade80;border-radius:8px">
+<span style="width:4px;height:6px;background:#06220f;border-radius:1px"></span>
+<span style="width:4px;height:11px;background:#06220f;border-radius:1px"></span>
+<span style="width:4px;height:17px;background:#06220f;border-radius:1px"></span>
+</span>
+<span>Grow<span style="color:#4ade80">pipe</span></span>
+</a>
+<div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;font-size:14px;font-weight:500;color:#9fb0a5">
+<a class="link" href="#servicios">Servicios</a>
+<a class="link" href="#como-funciona">Cómo funciona</a>
+<a class="link" href="#precios">Precios</a>
+<a class="btn-line" href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" style="padding:10px 18px;border:1px solid #2c3d34;border-radius:8px;color:#e8efe9">Escribinos</a>
+</div>
+</nav>
 
-  <!-- STATS -->
-  <div class="container">
-    <div class="stats">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-num">200–500</div>
-          <div class="stat-label">Prospectos por mes, según el plan</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">30<span>d</span></div>
-          <div class="stat-label">Piloto sin compromisos</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">2–4</div>
-          <div class="stat-label">Reuniones nuevas por semana</div>
-        </div>
-      </div>
-    </div>
-  </div>
+<main>
+<section id="inicio" style="padding:80px 0 56px;display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+<span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80;letter-spacing:0.04em">// Prospección outbound para LATAM</span>
+<h1 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(48px,8vw,96px);line-height:0.98;letter-spacing:-0.035em;max-width:900px;text-wrap:balance">Tu equipo de ventas <span style="color:#4ade80">externo.</span></h1>
+<p style="margin:0;font-size:19px;line-height:1.6;color:#9fb0a5;max-width:560px;text-wrap:pretty">Conseguimos reuniones con tus clientes ideales usando email outbound y cold calling. Sin contratar un SDR full-time.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:8px">
+<a class="btn-solid" href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" style="padding:14px 26px;background:#4ade80;color:#06220f;font-weight:600;font-size:15px;border-radius:8px">Pedí una llamada gratis</a>
+<a class="btn-line" href="#como-funciona" style="padding:14px 26px;border:1px solid #2c3d34;color:#e8efe9;font-weight:500;font-size:15px;border-radius:8px">Ver cómo funciona</a>
+</div>
+</section>
 
-  <!-- SERVICES -->
-  <div class="container">
-    <section id="servicios">
-      <p class="section-label">Servicios</p>
-      <div class="services-list">
+<div aria-hidden="true" style="background:#111a15;border:1px solid #22302a;border-radius:20px;padding:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(120px,100%),1fr));gap:16px">
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div>
-            <div class="service-title">Prospección Outbound</div>
-            <div class="service-desc">Email secuenciado + cold calling en paralelo. Armamos la lista, ejecutamos el outreach y te entregamos reuniones listas para cerrar.</div>
-          </div>
-        </div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9fb0a5;letter-spacing:0.06em;text-transform:uppercase">Lista</div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+</div>
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
-          <div>
-            <div class="service-title">Setup de Proceso Comercial</div>
-            <div class="service-desc">Diseñamos tu pipeline de ventas desde cero: CRM, etapas, scripts y playbook para que tu equipo venda con un proceso claro.</div>
-          </div>
-        </div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9fb0a5;letter-spacing:0.06em;text-transform:uppercase">Email + llamadas</div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #22302a"></div>
+</div>
 
-        <div class="service-item">
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
-          </div>
-          <div>
-            <div class="service-title">Automatización Comercial</div>
-            <div class="service-desc">Conectamos tus herramientas de ventas para que el proceso corra solo: seguimientos automáticos, scoring de leads y reportes en tiempo real.</div>
-          </div>
-        </div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#9fb0a5;letter-spacing:0.06em;text-transform:uppercase">Interesados</div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #2f5a3f"></div>
+<div style="height:56px;border-radius:10px;background:#18241d;border:1px solid #2f5a3f"></div>
+</div>
 
-      </div>
-    </section>
-  </div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#4ade80;letter-spacing:0.06em;text-transform:uppercase">Reunión</div>
+<div style="height:56px;border-radius:10px;background:#14301f;border:1px solid #4ade80"></div>
+</div>
 
-  <!-- HOW IT WORKS -->
-  <div class="container">
-    <section id="como-funciona">
-      <p class="section-label">Cómo funciona</p>
-      <div class="steps">
+</div>
 
-        <div class="step">
-          <div class="step-left"><div class="step-dot">1</div><div class="step-line"></div></div>
-          <div class="step-body">
-            <div class="step-title">Definimos tu cliente ideal</div>
-            <div class="step-desc">Trabajamos con vos para identificar exactamente a quién querés llegar: industria, tamaño de empresa, cargo del decisor y geografía.</div>
-          </div>
-        </div>
+<div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));border-top:1px solid #22302a;border-bottom:1px solid #22302a">
+<div class="stat" style="padding:36px 0;display:flex;flex-direction:column;gap:8px">
+<div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#4ade80">200–500</div>
+<div style="font-size:14px;color:#9fb0a5">Prospectos por mes, según el plan</div>
+</div>
+<div class="stat" style="padding:36px 0 36px 32px;display:flex;flex-direction:column;gap:8px;border-left:1px solid #22302a">
+<div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#4ade80">30 días</div>
+<div style="font-size:14px;color:#9fb0a5">Piloto sin compromisos</div>
+</div>
+<div class="stat" style="padding:36px 0 36px 32px;display:flex;flex-direction:column;gap:8px;border-left:1px solid #22302a">
+<div style="font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#4ade80">2–4</div>
+<div style="font-size:14px;color:#9fb0a5">Reuniones nuevas por semana</div>
+</div>
+</div>
 
-        <div class="step">
-          <div class="step-left"><div class="step-dot">2</div><div class="step-line"></div></div>
-          <div class="step-body">
-            <div class="step-title">Armamos la lista y arrancamos</div>
-            <div class="step-desc">Construimos una lista de prospectos calificados y lanzamos campañas de email y llamadas en paralelo desde el día 1.</div>
-          </div>
-        </div>
+<section id="servicios" style="padding:96px 0 24px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80;margin-bottom:12px">// Servicios</div>
+<h2 style="margin:0 0 40px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1.05;letter-spacing:-0.025em;max-width:640px">Todo lo que necesita tu proceso comercial</h2>
 
-        <div class="step">
-          <div class="step-left"><div class="step-dot">3</div><div class="step-line"></div></div>
-          <div class="step-body">
-            <div class="step-title">Te entregamos reuniones</div>
-            <div class="step-desc">Cuando un prospecto muestra interés, lo calificamos y te pasamos la reunión lista. Vos te enfocás en cerrar.</div>
-          </div>
-        </div>
+<div style="display:flex;flex-direction:column">
 
-        <div class="step">
-          <div class="step-left"><div class="step-dot">4</div></div>
-          <div class="step-body">
-            <div class="step-title">Reporte semanal</div>
-            <div class="step-desc">Cada semana recibís un reporte con métricas claras: emails enviados, tasa de apertura, llamadas realizadas y reuniones agendadas.</div>
-          </div>
-        </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px 48px;padding:32px 0;border-top:1px solid #22302a">
+<div style="display:flex;gap:20px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#4ade80">01</span><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-0.01em">Prospección Outbound</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#9fb0a5">Email secuenciado + cold calling en paralelo. Armamos la lista, ejecutamos el outreach y te entregamos reuniones listas para cerrar.</p>
+</div>
 
-      </div>
-    </section>
-  </div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px 48px;padding:32px 0;border-top:1px solid #22302a">
+<div style="display:flex;gap:20px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#4ade80">02</span><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-0.01em">Setup de Proceso Comercial</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#9fb0a5">Diseñamos tu pipeline de ventas desde cero: CRM, etapas, scripts y playbook para que tu equipo venda con un proceso claro.</p>
+</div>
 
-  <!-- PRICING -->
-  <div class="container">
-    <section id="precios">
-      <p class="section-label">Precios</p>
-      <div class="pricing-grid">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px 48px;padding:32px 0;border-top:1px solid #22302a;border-bottom:1px solid #22302a">
+<div style="display:flex;gap:20px;align-items:baseline"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#4ade80">03</span><h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;letter-spacing:-0.01em">Automatización Comercial</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#9fb0a5">Conectamos tus herramientas de ventas para que el proceso corra solo: seguimientos automáticos, scoring de leads y reportes en tiempo real.</p>
+</div>
 
-        <div class="plan">
-          <div class="plan-name">Piloto</div>
-          <div class="plan-price">US$500 <span>/mes</span></div>
-          <div class="plan-desc">30 días para ver resultados reales sin compromisos a largo plazo.</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Email outbound</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>200 prospectos/mes</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Reporte semanal</div>
-        </div>
+</div>
+</section>
 
-        <div class="plan featured">
-          <div class="plan-badge">Más popular</div>
-          <div class="plan-name">Completo</div>
-          <div class="plan-price">US$1.200 <span>/mes</span></div>
-          <div class="plan-desc">Email + cold calling con pipeline unificado en CRM.</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Email + cold calling</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>500 prospectos/mes</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>CRM incluido</div>
-          <div class="plan-feature"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Reporte avanzado</div>
-        </div>
+<section id="como-funciona" style="padding:96px 0 24px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80;margin-bottom:12px">// Cómo funciona</div>
+<h2 style="margin:0 0 48px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1.05;letter-spacing:-0.025em;max-width:640px">Cuatro pasos, de la lista a la reunión</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:32px">
 
-      </div>
-      <p class="pricing-note">Precios en dólares estadounidenses (USD).</p>
-    </section>
-  </div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:50%;background:#4ade80"></span><span style="flex:1;height:1px;background:#2c3d34"></span></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80">Paso 1</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600">Definimos tu cliente ideal</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#9fb0a5">Trabajamos con vos para identificar exactamente a quién querés llegar: industria, tamaño de empresa, cargo del decisor y geografía.</p>
+</div>
 
-  <!-- CTA BLOCK -->
-  <div class="container">
-    <section>
-      <div class="cta-block">
-        <div class="cta-title">¿Listo para llenar tu pipeline?</div>
-        <p class="cta-sub">Escribinos y coordinamos una llamada de 30 minutos. Te mostramos exactamente cómo funcionaría para tu empresa.</p>
-        <a href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" class="btn-primary">Pedir llamada gratis</a>
-        <p class="cta-alt">O escribinos a hola@growpipe.co</p>
-      </div>
-    </section>
-  </div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:50%;background:#4ade80"></span><span style="flex:1;height:1px;background:#2c3d34"></span></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80">Paso 2</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600">Armamos la lista y arrancamos</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#9fb0a5">Construimos una lista de prospectos calificados y lanzamos campañas de email y llamadas en paralelo desde el día 1.</p>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">Grow<span>pipe</span></div>
-      <a href="mailto:hola@growpipe.co" class="footer-email">hola@growpipe.co</a>
-    </div>
-  </footer>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:50%;background:#4ade80"></span><span style="flex:1;height:1px;background:#2c3d34"></span></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80">Paso 3</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600">Te entregamos reuniones</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#9fb0a5">Cuando un prospecto muestra interés, lo calificamos y te pasamos la reunión lista. Vos te enfocás en cerrar.</p>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:12px;height:12px;border-radius:50%;background:#4ade80"></span><span style="flex:1;height:1px;background:#2c3d34"></span></div>
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80">Paso 4</div>
+<h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:600">Reporte semanal</h3>
+<p style="margin:0;font-size:15px;line-height:1.65;color:#9fb0a5">Cada semana recibís un reporte con métricas claras: emails enviados, tasa de apertura, llamadas realizadas y reuniones agendadas.</p>
+</div>
+
+</div>
+</section>
+
+<section id="precios" style="padding:96px 0 24px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#4ade80;margin-bottom:12px">// Precios</div>
+<h2 style="margin:0 0 40px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:44px;line-height:1.05;letter-spacing:-0.025em;max-width:640px">Empezá con un piloto de 30 días</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px;max-width:880px">
+
+<div style="background:#111a15;border:1px solid #22302a;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:16px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#9fb0a5">Piloto</div>
+<div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:600;letter-spacing:-0.03em;line-height:1">US$500</span><span style="font-size:15px;color:#9fb0a5">/mes</span></div>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#9fb0a5">30 días para ver resultados reales sin compromisos a largo plazo.</p>
+<ul style="list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px">
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>Email outbound</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>200 prospectos/mes</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>Reporte semanal</li>
+</ul>
+</div>
+
+<div style="background:#111a15;border:1px solid #4ade80;border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#9fb0a5">Completo</span><span style="font-size:12px;font-weight:600;color:#06220f;background:#4ade80;padding:4px 10px;border-radius:999px">Más popular</span></div>
+<div style="display:flex;align-items:baseline;gap:6px"><span style="font-family:'Space Grotesk',sans-serif;font-size:52px;font-weight:600;letter-spacing:-0.03em;line-height:1">US$1.200</span><span style="font-size:15px;color:#9fb0a5">/mes</span></div>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#9fb0a5">Email + cold calling con pipeline unificado en CRM.</p>
+<ul style="list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px">
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>Email + cold calling</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>500 prospectos/mes</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>CRM incluido</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20,6 9,17 4,12"></polyline></svg>Reporte avanzado</li>
+</ul>
+</div>
+
+</div>
+<p style="margin:20px 0 0;font-size:13px;color:#9fb0a5">Precios en dólares estadounidenses (USD).</p>
+</section>
+
+<section style="padding:96px 0 80px">
+<div style="border:1px solid #2f5a3f;background:#0f1d15;border-radius:24px;padding:64px 40px;display:flex;flex-direction:column;align-items:flex-start;gap:20px">
+<h2 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:52px;line-height:1.02;letter-spacing:-0.03em;max-width:620px;text-wrap:balance">¿Listo para llenar tu pipeline?</h2>
+<p style="margin:0;font-size:18px;line-height:1.6;color:#9fb0a5;max-width:520px;text-wrap:pretty">Escribinos y coordinamos una llamada de 30 minutos. Te mostramos exactamente cómo funcionaría para tu empresa.</p>
+<div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-top:8px">
+<a class="btn-solid" href="mailto:hola@growpipe.co?subject=Quiero%20coordinar%20una%20llamada" style="padding:14px 28px;background:#4ade80;color:#06220f;font-weight:600;font-size:15px;border-radius:8px">Pedir llamada gratis</a>
+<span style="font-size:14px;color:#9fb0a5">O escribinos a hola@growpipe.co</span>
+</div>
+</div>
+</section>
+</main>
+
+</div>
+
+<footer style="border-top:1px solid #22302a">
+<div style="max-width:1120px;margin:0 auto;padding:28px 32px;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:#9fb0a5">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:600;color:#e8efe9">Grow<span style="color:#4ade80">pipe</span></span>
+<a class="link" href="mailto:hola@growpipe.co">hola@growpipe.co</a>
+</div>
+</footer>
+
+</div>
 
 </body>
 </html>
